@@ -2,44 +2,38 @@
 <html>
   <head>
     <title>SHUBHAM</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <style>
-      h1{font-size: 60px;
-        font-family: Roboto;
-        color: rgb(50, 50, 50);
-        }
-      #ig{
-        width: 100%;
-        height: 500px;
-        object-fit: cover;
-      }
-      h2{font-family: Roboto;
-         color: rgb(100, 100, 100);
-         font-size: 40px;
-         font-weight: normal;
-      }
-      .bodytext{font-family: Roboto;
-        color: rgb(80, 80, 80);
-      }
-      #bod{
-        max-width: 850px;
-        margin: 0 auto;
-      }
+      #ig{object-fit:cover;
+         width: 100%;
+         height: 360px;}
+      #body{font-size:20px;
+           font-family: Roboto;}
+      h2{margin-top:30px;
+        color:rgb(100,100,100);}
     </style>
   </head>
   <body>
-    <div id='bod'>
-        <center><h1>CAREERS</h1></center>
-        <img id='ig' src='https://f7f4b746-2f43-4dae-9d04-7c982043ba91-00-32f62ysppjyvv.pike.replit.dev/static/jobs.jpeg'>
-       <center> <h2>About Careers</h2> </center> 
+    <div class='container'>
+        <h1 class='text-center mt-2 mb-2' style='color:rgb(80,80,80)'>CAREERS</h1>
+        <img class='img-fluid' id='ig' src='https://f7f4b746-2f43-4dae-9d04-7c982043ba91-00-32f62ysppjyvv.pike.replit.dev/static/jobs.jpeg'>
+       <center> <h2 class='mt-6'>About Careers</h2> </center> 
        
-        <p class='bodytext'>Themes and styles also help keep your document coordinated. When you click Design and choose a new Theme, the pictures, charts, and SmartArt graphics change to match your new theme. When you apply styles, your headings change to match the new theme.Video provides a powerful way to help you prove your point. When you click Online Video, you can paste in the embed code for the video you want to add. You can also type a keyword to search online for the video that best fits your document.
+        <p id='body' >Themes and styles also help keep your document coordinated. When you click Design and choose a new Theme, the pictures, charts, and SmartArt graphics change to match your new theme. When you apply styles, your headings change to match the new theme.Video provides a powerful way to help you prove your point. When you click Online Video, you can paste in the embed code for the video you want to add. You can also type a keyword to search online for the video that best fits your document.
           To make your document look professionally produced, Word provides header, footer, cover page, and text box designs that complement each other. For example, you can add a matching cover page, header, and sidebar. Click Insert and then choose the elements you want from the different galleries.
-          Themes and styles also help keep your document coordinated. When you click Design and choose a new Theme, the pictures, charts, and SmartArt graphics change to match your new theme. When you apply styles, your headings change to match the new theme.
+          
     
     </p>
         <center><h2>Open Positions</h2> </center>
-        <p>TODO - Show the jobs here</p>
-        <div style='text-align:center;'><button>Contact Us</button>
+        <div>
+          {%for j in jobs%}
+          {%include 'jobs.html'%}
+          {%endfor%}
+        </div>
+        <div style='text-align:center;'><button class='btn btn-primary'>Contact Us</button>
       </div>
+    </div>
   </body>
 </html>
